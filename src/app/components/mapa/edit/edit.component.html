@@ -1,0 +1,13 @@
+<form [formGroup]="formu">
+    <mat-form-field class="">
+        <mat-label>Title:</mat-label>
+        <input formControlName="title" matInput placeholder="SuperBrugsen">
+    </mat-form-field>
+
+    <mat-form-field class="">
+        <mat-label>Leave a comment</mat-label>
+        <textarea formControlName="feature" matInput placeholder="go after 10 pm..."></textarea>
+    </mat-form-field>
+    <button (click)="saveDialog()" mat-raised-button color="primary">Save</button>
+    <button (click)="onNoClick()" color="accent">Cancel</button>
+</form>

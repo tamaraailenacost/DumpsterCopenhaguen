@@ -1,0 +1,25 @@
+<mat-card>
+    Never waste food!
+    <mat-card-title> Dumpster Copenhaguen</mat-card-title>
+    <mat-card-content>
+        <agm-map (mapClick)="getmarck( $event )" [latitude]="lat" [longitude]="lng">
+            <agm-marker *ngFor="let m of marcador; let i = index;" [latitude]="m.lat" [longitude]="m.lng">
+                <agm-info-window>
+                    <strong>
+                        <h3>{{ m.title }}</h3>
+                        <p>{{ m.feature }}</p>
+                    </strong>
+                    <button (click)="add( m )" mat-icon-button color="warn" aria-label="favorite">
+                        <mat-icon>favorite</mat-icon>
+                         {{ m.cont }}
+                    </button>
+                    <div *ngIf="auth.tokken">
+                        <button (click)="edit( m )" mat-raised-button color="primary">Edit</button>
+                        <button (click)="delete(i)" mat-raised-button color="accent">Delete</button>
+                    </div>
+                </agm-info-window>
+
+            </agm-marker>
+        </agm-map>
+    </mat-card-content>
+</mat-card>

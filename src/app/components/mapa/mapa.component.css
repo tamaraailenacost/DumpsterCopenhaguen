@@ -1,0 +1,17 @@
+agm-map {
+    height: 500px;
+}
+
+agm-info-window {
+    width: 120px;
+}
+
+agm-info-window p,
+h3,
+h4 {
+    color: black;
+}
+
+p {
+    color: black;
+}
